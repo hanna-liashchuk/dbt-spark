@@ -1,0 +1,9 @@
+
+version: 2
+
+models:
+  - name: test
+    description: "test"
+    columns:
+      - name: name
+        description: name

@@ -1,0 +1,25 @@
+spark_testing:
+  target: kyuubi
+  outputs:
+    local:
+      type: spark
+      method: thrift
+      host: 127.0.0.1
+      port: 10000
+      user: dbt
+      schema: default
+      server_side_parameters: {'spark.executor.memory': '3g'}
+      connect_retries: 5
+      connect_timeout: 60
+      retry_all: true
+    kyuubi:
+      host: hive-client.palefat.fozzy.lan
+      method: thrift
+      port: 10009
+      schema: gliashchuk
+      threads: 1
+      type: spark
+      auth: 'LDAP'
+      user: "g.liashchuk"
+      password: "FZal2209("
+      server_side_parameters: {'spark.executor.memory': '15g'}
